@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: A classy gallery</title>
+        <style>
+            body{
+                background: rgb(255, 255, 255) ;
+            }
+            .div_phone{
+                /* float: left; */
+                position:fixed;
+                left: 335px;
+                top:40px
+            }
+            .div_1{
+                /* margin-top: 20px;
+                margin-left: 415px; */
+                top: 45px;
+                left: 750px;
+                position:fixed;
+                width: 350px;
+                height: 581px;
+                color: rgb(38, 38, 38);
+                margin-top: 12px;
+            }
+            .div_2{
+                border: 1px solid rgb(219, 219, 219);
+                width: 350px;
+                height: 401px;
+            }
+            .div_3{
+                margin-bottom: 10px;
+                width: 348px;
+                height: 266px;
+                margin-bottom: 10px;
+                background: rgb(var(--ig-secondary-background));
+                border: 0;
+                padding: 9px 0 7px 8px;
+                /* text-overflow: ellipsis; */
+            }
+            .div_4{
+                position: relative;
+                width: 268px;
+                height: 38px;
+                margin: 0 35px 6px;
+                border-radius: 3px;
+                border-left: 1px solid rgb(168, 168, 168);
+                border-top: 1px solid rgb(168, 168, 168);
+                border-bottom: 1px solid rgb(168, 168, 168);
+                border-right: 1px solid rgb(168, 168, 168);
+                background-color: rgb(250, 250, 250);
+            }
+            .input{
+                text-overflow: ellipsis;
+                border: 0;
+                flex: 1 0 auto;
+                padding: 9px 0 7px 8px;
+                font-size: 14px;
+                font-weight: normal;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                line-height: 18px; 
+                color: rgb(38, 38, 38);
+                width: 258px;
+                /* height: 36px; */
+            }
+            .div_picture{
+                margin-left: 100px;
+                /* position:fixed; */
+                margin-top: 36px;
+                margin-bottom: 12px;
+            }
+            .button_log_in{
+                width: 268px;
+                height: 32px;
+                /* position: relative; */
+                margin-left: 35px;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                background-color: rgb(0, 149, 246);
+                opacity: .7;
+                border-radius: 8px;
+                text-align: center;
+                border: none;
+                color: white;
+                --web-always-white: 255, 255, 255;
+                --system-14-line-height: 18px;
+                --system-14-font-size: 14px;
+                --ig-primary-text: 38, 38, 38;
+                --ig-primary-button: 0, 149, 246;
+                --font-weight-system-semibold: 600;
+                --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-variant-caps: normal;
+                letter-spacing: normal;
+                font-style: normal;
+                /* width: auto; */
+                text-overflow: ellipsis;
+                font-weight: 600;
+                font-family: var(--font-family-system);
+                font-size: 14px;
+                padding: 7px 16px!important;
+            }
+            .div_5{
+                display: flex;
+                margin: 10px 35px 18px;
+                width: 268px;
+                height: 14px;
+                --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                --ig-primary-text: 38, 38, 38;
+                --system-14-font-size: 14px;
+                --system-14-line-height: 18px;  
+            }
+            .div_6{
+                border: none;
+                background-color: rgb(142, 142, 142);
+                width: 107px;
+                height: 1px;
+            }
+            .p_1{
+                vertical-align: baseline;
+                line-height: 1.1538;
+                color: rgb(142, 142, 142);
+                bottom:20px;
+                position: relative;
+                font: inherit;
+                --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                --ig-primary-text: 38, 38, 38;
+                --ig-secondary-text: 142, 142, 142;
+                --system-14-font-size: 14px;
+                --system-14-line-height: 18px;
+                font-size: .8125rem;
+                font-weight: 600;
+                margin-right: 18px;
+                margin-left: 18px;
+            }
+            .div_7{
+                margin-top: 8px;
+                margin-left: 35px;
+                width: 107px;
+                height: 1px;
+            }
+            .span_1{
+                height: 16px;
+                width: 16px;
+                background-position: -414px -259px;
+                background-repeat: no-repeat;
+                color:rgb(0, 149, 246);
+                cursor: pointer;
+                font-family: var(--font-family-system);
+                font-size: 14px;
+                font-weight: var(--font-weight-system-semibold);
+                pointer-events: auto;
+                text-align: center;
+                text-transform: inherit;
+                -webkit-user-select: none;
+                word-spacing: normal;
+                text-shadow: none;
+                writing-mode: horizontal-tb;
+                text-indent: 0px;
+                background-image: url(/rsrc.php/v3/y5/r/TJztmXpWTmS.png);
+                background-image: url(/rsrc.php/v3/y5/r/TJztmXpWTmS.png);
+            }
+            .button_1{
+                font-size: 14px;
+                text-align: center;
+                font-weight: 600;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                color: #385185;
+                line-height: 18px;
+                --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                --font-weight-system-semibold: 600;
+                --ig-primary-button: 0, 149, 246;
+                --ig-primary-text: 38, 38, 38;
+                --system-14-font-size: 14px;
+                --system-14-line-height: 18px;
+                font-style: normal;
+                word-spacing: normal;
+                letter-spacing: normal;
+                font-variant-caps: normal;
+                text-indent: 0px;
+                text-shadow: none;
+                writing-mode: horizontal-tb;
+                font: inherit;
+                background-color: white;
+                border: none;
+                width: 268px;
+                height: 22px;
+                margin-left: 35px;
+            }
+            .div_8{
+                margin-left: 90px;
+                margin-top: 10px;
+                width: 248px;
+                height: 20px;
+            }
+            .a_1{
+                margin-top: 20px;
+                margin-left: 90px;
+                color: rgb(0, 55, 107);
+                font-size: 12px;
+                opacity: .5;
+                list-style: none;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+            .div_9{
+                border: 1px solid rgb(219, 219, 219);
+                margin-top: 30px;
+                width: 350px;
+                height: 63px;
+                color: rgb(142, 142, 142);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                margin-left: -1px;
+                /* margin-left: 80px; */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                display: block;
+            }
+            .p_2{
+                margin-top: 20px;
+                margin-left: 65px;
+                color:rgb(0, 55, 107);
+            }
+            .a_2{
+                color:rgb(0, 149, 246);
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .div_10{
+                text-align: center;
+                margin-top: 21px;
+                margin-bottom: 10px;
+                font-size: 14px;
+                --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                --ig-primary-text: 38, 38, 38;
+                --system-14-font-size: 14px;
+                --system-14-line-height: 18px;
+                font-weight: 300;
+                /* display: block; */
+            }
+            .div_11{
+                margin-top: 10px;
+                width: 350px;
+                height: 44px;
+            }
+            .img_1{
+                width: 136px;
+                height: 44px;
+            }
+            .img_left{
+                margin-left: 40px;
+            }
+            .div_bottom{
+                left: 305px;
+                top: 695px;
+                position: fixed;
+                width: 1408px;
+                height: 23px;
+                display: flex;
+            }
+            .div_bottom_text{
+                color: rgb(142, 142, 142);
+                font-weight: 400;
+                font-size: 12px;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+            .div_bottom_2{
+                left: 540px;
+                top: 731px;
+                position: fixed;
+                width: 1408px;
+                height: 11px;
+                display: flex;
+
+            }
+            select{
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                background-color: #fff;
+                appearance: menulist;
+                align-items: center;
+                white-space: pre;
+                -webkit-rtl-ordering: logical;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-bottom-left-radius: 5px;
+                letter-spacing: normal;
+                word-spacing: normal;
+                line-height: normal;
+                text-transform: none;
+                text-indent: 0px;
+                text-shadow: none;
+                display: inline-block;
+                text-align: start;
+                writing-mode: horizontal-tb;
+                letter-spacing: normal;
+                word-spacing: normal;
+                line-height: normal;
+                text-transform: none;
+                text-indent: 0px;
+                text-shadow: none;
+                display: inline-block;
+                text-align: start;
+                font-variant-caps: normal;
+                border: 1px solid #ccd0d5;
+            }
+            .div_select{
+                margin-top: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div_phone">
+            <img src="instagram_phones.png">
+        </div>
+        <div class="div_1">
+            <div class="div_2">
+                <div class="div_picture">
+                    <i data-visualcompletion="css-img" aria-label="Instagram" class="" role="img" style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v3/y-/r/yXM3FgMdVNX.png&quot;); background-size: auto; width: 175px; height: 51px; display: inline-block; background-position: 0px -52px; background-repeat: no-repeat no-repeat;"></i>
+                </div>
+                <div class="div_3">
+                    <div class="div_4">
+                        <input class="input" type="text" placeholder="Phone number, username or email address">
+                    </div>
+                    <div class="div_4">
+                        <input class="input" type="text" placeholder="Password">
+                    </div>
+                    <button class="button_log_in">Log in</button>
+                    <div class="div_5">
+                        <div class="div_6"></div>
+                        <p class="p_1">OR</p>
+                        <div class="div_6"></div>
+                    </div>
+                    <button class="button_1">
+                        <img src="https://www.freepnglogos.com/uploads/logo-facebook-png/logo-facebook-facebook-logo-transparent-png-pictures-icons-and-0.png" width="16" height="16">
+                        Log in with Facebook
+                    </button>
+                    <div_8>
+                        <button class="a_1" href="https://www.instagram.com">
+                            Forgotten your password?
+                        </button>
+                    </div_8>
+                </div>
+                <div class="div_9">
+                    <p class="p_2">Don't have an account? <a href="https://www.instagram.com" class="a_2">Sign up.</a></p>
+                </div>
+                <div class="div_10">
+                    <p>Get the app</p>
+                </div>
+                <div class="div_11">
+                    <a class="a_3">
+                        <img alt="Download from the App Store" class="img_1 img_left" src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/Yfc020c87j0.png">
+                    </a>
+                    <a class="a_3">
+                        <img alt="Get it on Google Play" class="img_1" src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="div_bottom">
+            <div class="div_bottom_text">
+                <p>Meta</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>About</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Blog</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Jobs</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Help</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>API</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Privacy</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Terms</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Top accounts</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Locations</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Instagram Lite</p>
+            </div>
+            <div class="div_bottom_text">
+                <p>Contact uploading and non-users</p>
+            </div>
+        </div>
+        <div class="div_bottom_2">
+            <div class="div_bottom_text div_select">
+                <select>
+                    <option value="en">English(UK)</option>
+                    <option value="af">Afrikaans</option>
+                    <option value="cs">Čeština</option>
+                    <option value="da">Dansk</option>
+                    <option value="de">Deutsch</option>
+                    <option value="el">Ελληνικά</option>
+                    <option value="en">English</option>
+                    <option value="en-gb">English (UK)</option>
+                    <option value="es">Español (España)</option>
+                    <option value="es-la">Español</option>
+                    <option value="fi">Suomi</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+            <div class="div_bottom_text">
+                <p>© 2023 Instagram from Meta</p>
+            </div>
+        </div>
+    </body>
+</html>
+<div>
+            
+</div>
