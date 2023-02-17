@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <script type="text/javascript">
+            function a1(){
+                alert('Yes');
+            }
+            a1();
+
+            let a = 10;
+            function a2(){
+                let a = 12;
+                alert(a);
+            }
+            a2();
+            alert(a);
+
+            let b = 10;
+            function a3(){
+                b = 12;
+                alert(b);
+            }
+            a3();
+            alert(b);
+
+            function a4(shlop, pop){
+                alert(shlop);
+            }
+            a4(1, 2)
+
+            function a5(shlop = 'shlop', pop = 'pop'){
+                alert(shlop);
+            }
+            a5();
+        </script>
+    </body>
+</html>
