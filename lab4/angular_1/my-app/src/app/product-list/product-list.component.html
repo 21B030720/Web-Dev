@@ -9,7 +9,7 @@
       {{ product.name }}
     </a>
   </h3>
-  <a href="https://t.me/share/url?url={{product.link}}"><img [attr.height]="'100px'" src = "{{product.image}}"></a>
+  <a href="{{product.link}}"><img [attr.height]="'100px'" src = "{{product.image}}"></a>
   <p *ngIf="product.description">
     Description: {{ product.description }}
   </p>
