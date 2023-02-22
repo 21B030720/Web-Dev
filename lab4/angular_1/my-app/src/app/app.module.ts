@@ -62,6 +62,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Product } from './products';
 import { ShippingComponent } from './shipping/shipping.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+// import {Light};
 // import { RouterModule } from '@angular/router';
 // import { HttpClientModule } from '@angular/common/http';
 // import { ProductDetailsComponent } from 'products/:productId';
@@ -71,6 +72,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 @NgModule({
   imports: [
+    // LightboxModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
