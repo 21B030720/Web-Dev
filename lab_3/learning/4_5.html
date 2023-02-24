@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <script type="text/javascript">
+            let user = {
+                data: "Arslan",
+                f: function(){
+                    this.data = "Janger";
+                }
+            }
+            user.f();
+            alert(user.data);
+            function u(){
+                this.name = "Arslan";
+            }
+            let k = new u();
+            alert(k.name);
+        </script>
+    </body>
+</html>

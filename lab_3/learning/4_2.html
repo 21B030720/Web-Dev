@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <script type="text/javascript">
+            let user = {
+                data: "Arslan",
+            }
+            alert(user.data);
+            let cop = structuredClone(user);
+            alert(cop.data === user.data)
+            let a = {
+            data: "Arslan"
+            }
+            let b = {
+                key: "Barber"
+            }
+            let c = {
+                salary: 20
+            }
+            Object.assign(c, b, a);
+            alert(c.key);
+        </script>
+
+    </body>
+</html>
