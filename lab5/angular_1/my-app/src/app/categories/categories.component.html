@@ -1,1 +1,27 @@
-<p>categories works!</p>
+<h2>Categories</h2>
+<!-- [routerLink]="['/products', category.category_id]" -->
+<div *ngFor="let category of categories">
+    <h3>
+        <a
+          [title]="category.name + ' details'"
+          [routerLink]="['/categories', category.id]"
+        
+          >
+          {{ category.name }}
+        </a>
+      </h3>
+      <a><img [attr.height]="'100px'" src = "{{category.image}}"></a>
+      <!-- <p *ngIf="product.description">
+        Description: {{ product.description }}
+      </p> -->
+      <!-- <a href="https://t.me/share/url?url={{product.link}}">
+        (click)="share()" -->
+        <!-- <button type="button" > 
+          Share
+        </button>
+      </a> -->
+      
+      <!-- <app-product-list
+        [category]="category">
+      </app-product-list> -->
+</div>

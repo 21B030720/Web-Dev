@@ -137,6 +137,11 @@ app-top-bar h1 {
   background-color: #EEEEEE;
 }
 
+.like_button{
+  background: transparent;
+  color: black;
+}
+
 
 /*
 Copyright Google LLC. All Rights Reserved.

@@ -9,24 +9,31 @@
 // export class ProductListComponent {
 
 // }
-import { Component } from '@angular/core';
-
-import { products } from '../products';
-
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+// import { products } from '../products';
+import { Product, products } from '../products';
+import { Category, categories } from '../categories';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-
   products = [...products];
-
-  share() {
-    window.alert('The product has been shared!');
+  constructor(private route: ActivatedRoute) { }
+  categoryId: number = 0;
+  ngOnInit() {
+    const routeParams = this.route.snapshot.paramMap;
+    const categoryIdFromRoute = Number(routeParams.get('categoryId'));
+  
+    // Find the product that correspond with the id provided in route.
+    this.categoryId = categoryIdFromRoute;
   }
-
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+  like(product: Product){
+    product.like++;
+  }
+  delete(product: Product){
+    product.appear = false;
   }
 }
