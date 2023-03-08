@@ -1,6 +1,9 @@
 <p>Post List</p>
 <fieldset>
-    <input type="text" [(ngModel)] = "newPost.title">
+    <input type="text" [(ngModel)] = "newPost.title"><br/>
+    <textarea [(ngModel)] = "newPost.body">
+
+    </textarea>
     <button (click) = "addPost()">Add post</button>
 </fieldset>
 <ul *ngIf = "loaded">

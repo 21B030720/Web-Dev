@@ -13,6 +13,9 @@ import { PostsComponent } from './posts/posts.component';
 import {HttpClientModule} from "@angular/common/http"
 import { CommonModule } from '@angular/common';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlbumsComponent } from './albums/albums.component';
+import { AlbumDetailComponent } from './album-detail/album-detail.component';
+import { AlbumPhotosComponent } from './album-photos/album-photos.component';
 // import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     NotFoundComponent,
     PostsComponent,
+    AlbumsComponent,
+    AlbumDetailComponent,
+    AlbumPhotosComponent,
     // CommonComponent,
   ],
   imports: [

@@ -8,12 +8,17 @@ import { CommonModule } from '@angular/common';
   providedIn: 'root'
 })
 export class PostService {
-
-  constructor(private client: HttpClient) { }
+  BASE_URL: string;
+  constructor(private client: HttpClient) {
+    this.BASE_URL = 'https://jsonplaceholder.typicode.com';
+   }
   getPosts(): Observable<Post[]>{
-    return this.client.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
+    return this.client.get<Post[]>(`${this.BASE_URL}/posts`)
   }
   getPost(id: number): Observable<Post>{
-    return this.client.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    return this.client.get<Post>(`${this.BASE_URL}/posts/${id}`);
+  }
+  addPost(post: Post): Observable<Post>{
+    return this.client.post<Post>(`${this.BASE_URL}/posts`, post);
   }
 }

@@ -1,0 +1,22 @@
+<!-- <div *ngIf="loaded">
+    <h2>Photo detail #{{photo.id}}</h2>
+
+    <h4>{{photo.title}}</h4>
+    <img src="{{photo.url}}">
+</div>
+<h3 *ngIf="!loaded">Album-ditail is not loaded(I wrote it in code)</h3> -->
+
+
+
+<!--  -->
+
+
+<p>Photo List</p>
+<ul *ngIf = "loaded">
+    <li *ngFor="let photo of photos">
+        {{photo.id}}
+        <h4>{{photo.title}}</h4>
+        <img src="{{photo.url}}">
+    </li>
+</ul>
+<h3 *ngIf = "!loaded">Post-Main is not loaded(I wrote it in code)</h3>

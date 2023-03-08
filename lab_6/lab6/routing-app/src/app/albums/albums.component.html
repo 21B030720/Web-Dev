@@ -1,0 +1,16 @@
+<p>Album List</p>
+<fieldset>
+    <input type="text" [(ngModel)] = "newAlbum.title"><br/>
+    <!-- <textarea [(ngModel)] = "newAlbum.body"> -->
+
+    <!-- </textarea> -->
+    <button (click) = "addAlbum()">Add post</button>
+</fieldset>
+<ul *ngIf = "loaded">
+    <li *ngFor="let album of albums">
+        <a routerLink="/albums/{{album.id}}">
+            {{album.id}} {{album.title}}
+        </a>
+    </li>
+</ul>
+<h3 *ngIf = "!loaded">Post-Main is not loaded(I wrote it in code)</h3>
