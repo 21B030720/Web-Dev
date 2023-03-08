@@ -1,5 +1,9 @@
 <div *ngIf="loaded">
     <button><a href="/album">Return back</a></button>
+
+    <input type="text" [(ngModel)] = "newAlbum.title"><br/>
+    <button (click) = "changeAlbum(album)">Add post</button>
+
     <h2>Album detail #{{album.id}}</h2>
 
     <h4>{{album.title}}</h4>

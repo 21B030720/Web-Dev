@@ -12,7 +12,7 @@ export class AlbumsComponent {
   albums: Album[] = [];
   loaded: boolean;
   newAlbum: Album;
-  constructor(private postService: AlbumsService){
+  constructor(private albumService: AlbumsService){
     this.albums = [];
     this.loaded = true;
     this.newAlbum = {} as Album;
@@ -23,14 +23,14 @@ export class AlbumsComponent {
 
   getAlbums(){
     this.loaded = false;
-    this.postService.getAlbums().subscribe((albums: Album[]) =>{
+    this.albumService.getAlbums().subscribe((albums: Album[]) =>{
       this.albums = albums;
       this.loaded = true;
     });
   }
   addAlbum(){
-    this.postService.addAlbum(this.newAlbum).subscribe((post: Album) => {
-      console.log(post);
+    this.albumService.addAlbum(this.newAlbum).subscribe((album: Album) => {
+      console.log(album);
     })
   }
 }

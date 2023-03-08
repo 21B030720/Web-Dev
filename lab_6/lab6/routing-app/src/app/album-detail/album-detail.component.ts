@@ -14,11 +14,13 @@ import { AlbumsService } from '../albums.service';
   styleUrls: ['./album-detail.component.css']
 })
 export class AlbumDetailComponent {
+  newAlbum: Album;
   album: Album;
   loaded: boolean;
   constructor(private route: ActivatedRoute, private albumService: AlbumsService ){
     this.album = {} as Album;
     this.loaded = true;
+    this.newAlbum = {} as Album;
   }
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -29,5 +31,10 @@ export class AlbumDetailComponent {
         this.loaded = true;
       });
     } )
+  }
+  changeAlbum(body: Album){
+    this.albumService.changeAlbum(this.newAlbum, body).subscribe((album: Album) => {
+      console.log(album);
+    })
   }
 }
