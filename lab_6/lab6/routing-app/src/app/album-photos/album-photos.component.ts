@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Photo } from '../module2'; 
 import { PhotosService } from '../photos.service';
 import { Params } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-album-photos',
@@ -14,7 +15,7 @@ export class AlbumPhotosComponent {
   photos: Photo[] = [];
   photo: Photo;
   loaded: boolean;
-  constructor(private route: ActivatedRoute, private photoService: PhotosService ){
+  constructor(private _location: Location, private route: ActivatedRoute, private photoService: PhotosService ){
     this.photo = {} as Photo;
     this.loaded = true;
   }
@@ -36,4 +37,7 @@ export class AlbumPhotosComponent {
     //   });
     // } )
   }
+  backClicked() {
+    this._location.back();
+  };
 }

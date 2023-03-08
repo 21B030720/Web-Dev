@@ -12,6 +12,8 @@
 
 
 <p>Photo List</p>
+<!-- routerLink="/albums/{{photo.albumId}}" -->
+<button (click)="backClicked()"><a>Return back</a></button>
 <ul *ngIf = "loaded">
     <li *ngFor="let photo of photos">
         {{photo.id}}
