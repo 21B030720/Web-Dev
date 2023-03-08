@@ -1,0 +1,13 @@
+<p>Post List</p>
+<fieldset>
+    <input type="text" [(ngModel)] = "newPost.title">
+    <button (click) = "addPost()">Add post</button>
+</fieldset>
+<ul *ngIf = "loaded">
+    <li *ngFor="let post of posts">
+        <a routerLink="/posts/{{post.id}}">
+            {{post.id}} {{post.title}}
+        </a>
+    </li>
+</ul>
+<h3 *ngIf = "!loaded">Post-Main is not loaded(I wrote it in code)</h3>
