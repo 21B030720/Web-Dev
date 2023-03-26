@@ -32,8 +32,18 @@ export class AlbumDetailComponent {
       });
     } )
   }
-  changeAlbum(body: Album){
-    this.albumService.changeAlbum(this.newAlbum, body).subscribe((album: Album) => {
+  deleteAlbum(k: number){
+    this.albumService.deleteAlbum(k).subscribe((album: Album) => {
+      console.log(album);
+    })
+  }
+  changeAlbum(title: string, id: number, body: Album){
+    body = {
+      userId: body.userId,
+      id: body.id,
+      title: body.title,
+    } as Album;
+    this.albumService.changeAlbum(id, body).subscribe((album: Album) => {
       console.log(album);
     })
   }

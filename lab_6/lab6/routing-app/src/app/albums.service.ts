@@ -26,11 +26,16 @@ export class AlbumsService {
   // editAlbum(album: Album): Observable<Album>{
   //   return this.client.<Album>(`${this.BASE_URL}/albums`, album);
   // }
+  deleteAlbum(id: number): Observable<Album>{
+    this.client.delete(`${this.BASE_URL}/albums/${id}`);
+    return this.client.get<Album>(`${this.BASE_URL}/albums/${id}`);
+    // this.client.delete<Album>(`${this.BASE_URL}/albums/${id}`);
+  }
   addAlbum(album: Album): Observable<Album>{
     return this.client.post<Album>(`${this.BASE_URL}/albums`, album);
   }
-  changeAlbum(album: Album, body: Album): Observable<Album>{
-    return this.client.post<Album>(`${this.BASE_URL}/albums`, body);
-    return this.client.post<Album>(`${this.BASE_URL}/albums`, album);
+  changeAlbum(id: number, body: Album): Observable<Album>{
+    return this.client.put<Album>(`${this.BASE_URL}/albums/${id}`, body);
+    // return this.client.post<Album>(`${this.BASE_URL}/albums`, album);
   }
 }
