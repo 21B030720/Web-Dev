@@ -9,7 +9,7 @@ products = [
         'description': "Description",
         'count': _id,
         'is_active': True,
-        'id': _id,
+        # 'id': _id,
         # 'name': f'Product {_id}',
         # 'price': _id * 1000
     }
@@ -48,11 +48,23 @@ def categoryDetail(request, id):
 #
 #
 def productInsert(request):
-    for product in products:
-        m = Product(name = product['name'], price = product['price'], description = product['description'],
-                    count = product['count'],
-                    is_active = product['is_active'])
-        m.save()
+    # m = Product(name = 'ramazan', price = 1000, description = "I am krutoi",
+    #                 count = 10,
+    #                 is_active = True)
+    # m.save()
+
+
+    # for product in products:
+    #     m = Product(name = product['name'], price = product['price'], description = product['description'],
+    #                 count = product['count'],
+    #                 is_active = product['is_active'])
+    #     m.save()
+
+    m = Product(name='Arslan_loh', price=1000, description="I am krutoi",
+                    count = 10,
+                    is_active = True)
+    m.save()
+    print("updated")
     return HttpResponse(f"<h1 style='color: red;'>Products in data have worked</h1>")
 
 def categoryInsert(request):

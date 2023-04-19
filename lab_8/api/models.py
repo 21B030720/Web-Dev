@@ -7,6 +7,7 @@ class Product(models.Model):
     description = models.TextField()
     count = models.IntegerField()
     is_active = models.BooleanField()
+    # pp =
     def to_json(self):
         return {
             'id': self.id,

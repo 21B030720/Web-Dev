@@ -1,0 +1,17 @@
+<h1>Categories</h1>
+<fieldset>
+    <label>Category name</label>
+    <input type="text" [(ngModel)]="newName">
+    <input type="text" [(ngModel)]="newDescription">
+    <input type="text" [(ngModel)]="newCity">
+    <input type="text" [(ngModel)]="newAddress">
+    <button (click)="addCompany()">Add Company</button>
+</fieldset>
+<ul>
+    <li *ngFor="let company of companies" >
+        <a routerLink="/vacancies/{{company.id}}">{{company.id}} - {{company.name}} <button (click)="deleteCompany(company.id)">X</button></a>
+
+    </li>
+</ul>
+
+<router-outlet></router-outlet>

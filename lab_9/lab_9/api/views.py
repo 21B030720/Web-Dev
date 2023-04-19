@@ -94,6 +94,7 @@ def vacancyDetailGet(request, id):
     return JsonResponse(vacancy.to_json(), safe=False)
 def vacancySortedGet(request):
     vacancies = Vacancy.objects.all().order_by('-salary')
+
     companies_json = [p.to_json() for p in vacancies]
     return JsonResponse(companies_json, safe=False)
 # changed Company
@@ -124,19 +125,22 @@ def companyWork(request, id = 0):
         city = data.get('city', '')
         address = data.get('address', '')
         # print(name, des, city, address)
-        category = Company.objects.create(name = name, description = des, city = city, address = address)
-        return JsonResponse(category.to_json())
-        # for company in companies:
-        #     m = Company(name=company['name'], description=company['description'],
-        #                 city=company['city'], address=company['address'])
-        #     m.save()
-        # return JsonResponse(companies, safe = False)
-    # elif(request.method == "PUT" and id):
-    #     company = Company.objects.get(id=id)
-    #     # data = json.loads(request.body)
-    #     new_company_name = data.get('name', category.name)
-    #     category.name = new_category_name
-    #     category.save()
+        company = Company.objects.create(name = name, description = des, city = city, address = address)
+        return JsonResponse(company.to_json())
+    elif(request.method == "PUT" and id != 0):
+        company = Company.objects.get(id=id)
+        data = json.loads(request.body)
+        name = data.get('name', '')
+        des = data.get('description', '')
+        city = data.get('city', '')
+        address = data.get('address', '')
+        company = Company(name=name, description=des, city=city, address=address)
+        company.save()
+        return JsonResponse(company.to_json())
+    elif(request.method == "DELETE" and id != 0):
+        company = Company.objects.get(id=id)
+        company.delete()
+        return JsonResponse({'deleted': True})
 @csrf_exempt
 def vacancyWork(request, id = 0):
     if(request.method == "GET"):
