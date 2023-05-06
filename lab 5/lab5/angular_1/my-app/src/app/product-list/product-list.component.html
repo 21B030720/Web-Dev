@@ -1,0 +1,35 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+<div *ngIf="product.category_id === categoryId">
+<div *ngIf="product.appear">
+  <h3>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+  </h3>
+  <a href="{{product.link}}"><img [attr.height]="'100px'" src = "{{product.image}}"></a>
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  <a href="https://t.me/share/url?url={{product.link}}">
+    <!-- (click)="share()" -->
+    <button type="button" > 
+      Share
+    </button>
+  </a>
+  <button class="like_button" type="button" (click)="like(product)"> 
+    <img [attr.height]="'15px'" [attr.width]="'15px'" src="https://static.vecteezy.com/system/resources/previews/001/505/090/original/like-icon-free-vector.jpg"> {{product.like}}
+  </button>
+  <button type="button" (click)="delete(product)"> 
+    Delete
+  </button>
+  
+  <app-product-alerts
+    [product]="product">
+  </app-product-alerts>
+</div>
+</div>
+</div>

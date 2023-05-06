@@ -6,6 +6,7 @@ class Company(models.Model):
     description = models.TextField()
     city = models.CharField(max_length=255)
     address = models.TextField()
+
     # def __str__(self):
     #     return f" The name: {self.name}, The description: {self.description}, The city: {self.city}, The address: {self.address}"
     def to_json(self):

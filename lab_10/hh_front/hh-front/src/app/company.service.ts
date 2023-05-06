@@ -40,7 +40,7 @@ export class CompanyService {
   //
   daleteCompany(compId: number):Observable<any>{
     return this.client.delete(
-      `${this.BASE_URL}/api/companies/${compId}`,
+      `${this.BASE_URL}/api/companies/${compId}/`,
 
     )
   }

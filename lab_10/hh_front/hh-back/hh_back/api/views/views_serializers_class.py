@@ -25,7 +25,7 @@ class CompanyClass(APIView):
             serializer.save()
             return JsonResponse(serializer.data, safe=False)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    def post(self, request, id, format=None):
+    def post(self, request, format=None):
         serializer = CompanySerializer(data = request.data)
         if(serializer.is_valid()):
             serializer.save()
